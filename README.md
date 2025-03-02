@@ -47,9 +47,6 @@
         mask = russianPhoneNumberFormat, 
         value = phoneNumber,
         onValueChange = { phoneNumber = it },
-        onCursorPositionChanged = { position ->
-            cursorPosition = position
-        },
         modifier = Modifier.fillMaxWidth()
     )
     ```

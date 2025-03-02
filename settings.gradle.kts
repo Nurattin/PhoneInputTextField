@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "PhoneInputTextField"
 include(":app")
- 
+include(":phoneinputotpfield")

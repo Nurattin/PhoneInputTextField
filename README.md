@@ -1,6 +1,6 @@
 # Compose Phone OTP Text Field
 
-[![phone_OTP_text_field_logo.gif](phone_OTP_text_field_logo.gif)](https://example.com) This library provides a customizable `PhoneOtpTextField` Composable for Android, designed for entering phone numbers with a predefined format (mask).  It supports features like:
+[![phone_OTP_text_field_logo.gif](readmeassets/phone_OTP_text_field_logo.gif)](https://example.com) This library provides a customizable `PhoneOtpTextField` Composable for Android, designed for entering phone numbers with a predefined format (mask).  It supports features like:
 
 *   **Customizable Masking:** Define the phone number format using a sequence of `PhoneNumberElement`s (either `Mask` for static characters or `EditableDigit` for digit placeholders).
 *   **Digit-Only Input:**  Restricts input to numeric characters only.
@@ -11,7 +11,7 @@
 
 ## Demo
 
-![phone_OTP_text_field_sample.gif](phone_OTP_text_field_sample.gif)
+![phone_OTP_text_field_sample.gif](readmeassets/phone_OTP_text_field_sample.gif)
 
 ## Usage
 
@@ -43,35 +43,16 @@
 2.  **Use the `PhoneOtpTextField` Composable:**
 
     ```kotlin
-    @Composable
-    fun MyScreen() {
-        var phoneNumber by remember { mutableStateOf("") }
-        var cursorPosition by remember { mutableStateOf(0) }
-
-        Column {
-            PhoneOtpTextField(
-                mask = russianPhoneNumberFormat, // Or any other format
-                value = phoneNumber,
-                onValueChange = { phoneNumber = it },
-                onCursorPositionChanged = { position ->
-                    cursorPosition = position
-                    // Do something with the cursor position (e.g., update UI)
-                },
-                enabled = true, // Optional: enable/disable the field
-                textStyle = MaterialTheme.typography.h6.copy( // Customize text style
-                    fontSize = 20.sp,
-                    fontWeight = FontWeight.Bold
-                ),
-                color = PhoneOtpTextFieldDefault.color().copy( // Customize colors
-                    maskColor = { enabled -> if (enabled) Color.DarkGray else Color.LightGray }
-                ),
-                modifier = Modifier.fillMaxWidth()
-            )
-
-            Text("Current Cursor Position: $cursorPosition")
-        }
-    }
+    PhoneOtpTextField(
+        mask = russianPhoneNumberFormat, 
+        value = phoneNumber,
+        onValueChange = { phoneNumber = it },
+        onCursorPositionChanged = { position ->
+            cursorPosition = position
+        },
+        modifier = Modifier.fillMaxWidth()
+    )
     ```
     **Result:**
 
-    ![phone_OTP_text_field_usage_sample.png](phone_OTP_text_field_usage_sample.png)
+    ![phone_OTP_text_field_usage_sample.png](readmeassets/phone_OTP_text_field_usage_sample.png)
